@@ -24,5 +24,8 @@ go.work
 **/.idea
 **/.vscode
 
+project/db-data
+
 broker-service/brokerApp
 front-end/frontApp
+authentication-service/authApp
