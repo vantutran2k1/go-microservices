@@ -70,6 +70,7 @@
                     password: "verysecret",
                 }
             }
+
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
 
@@ -82,11 +83,10 @@
             fetch("http:\/\/localhost:8080/handle", body)
                 .then(response => response.json())
                 .then(data => {
-                    console.log("----- checkpoint")
                     sent.innerHTML = JSON.stringify(payload, undefined, 4);
                     received.innerHTML = JSON.stringify(data, undefined, 4);
                     if (data.error) {
-                        output.innerHTML += `<br><<strong>Error:</strong> ${data.message}`;
+                        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
                     } else {
                         output.innerHTML += `<br><strong>Response from broker service:</strong> ${data.message}`
                     }
@@ -117,11 +117,10 @@
             fetch("http:\/\/localhost:8080/handle", body)
                 .then(response => response.json())
                 .then(data => {
-                    console.log("----- checkpoint")
                     sent.innerHTML = JSON.stringify(payload, undefined, 4);
                     received.innerHTML = JSON.stringify(data, undefined, 4);
                     if (data.error) {
-                        output.innerHTML += `<br><<strong>Error:</strong> ${data.message}`;
+                        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
                     } else {
                         output.innerHTML += `<br><strong>Response from broker service:</strong> ${data.message}`
                     }
